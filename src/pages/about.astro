@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const values = [
+  {
+    icon: 'verified',
+    title: 'Senior Talent Only',
+    desc: 'Every engineer on your project has years of experience shipping production apps. No juniors learning on your dime.',
+    color: 'green',
+  },
+  {
+    icon: 'speed',
+    title: 'Uncompromising Quality',
+    desc: 'We obsess over 60fps animations, memory management, and robust error handling. We build apps that feel native because they are native.',
+    color: 'blue',
+  },
+  {
+    icon: 'handshake',
+    title: 'Transparent Partnership',
+    desc: 'Direct communication with the engineers building your product. No layers of account managers or opaque processes.',
+    color: 'purple',
+  },
+];
+
+const team = [
+  { name: 'Alex Rivera', role: 'Founder & Principal Engineer', image: 'https://picsum.photos/seed/alex/400/400' },
+  { name: 'Sam Chen', role: 'Head of Mobile Architecture', image: 'https://picsum.photos/seed/sam/400/400' },
+  { name: 'Jordan Lee', role: 'Lead iOS Engineer', image: 'https://picsum.photos/seed/jordan/400/400' },
+];
+---
+
+<BaseLayout title="About Us - EODbytes" description="Learn about our mission, philosophy, and the senior engineering team behind EODbytes.">
+  <Header />
+
+  <section class="about-page">
+    <div class="container">
+      <!-- Hero -->
+      <div class="about-hero animate-fade-in-up">
+        <div class="badge">
+          <span class="material-symbols-outlined">groups</span>
+          Our Mission
+        </div>
+        <h1 class="about-title">
+          We engineer <span class="accent">impactful</span> mobile products.
+        </h1>
+        <p class="about-subtitle">
+          EODbytes is a specialized mobile engineering studio. We believe that exceptional software is built by small,
+          senior teams focused on craftsmanship, performance, and maintainability.
+        </p>
+      </div>
+
+      <!-- Philosophy Grid -->
+      <div class="philosophy-grid">
+        <!-- Dark Card -->
+        <div class="philosophy-main reveal--left">
+          <div class="icon-circle icon-circle--primary icon-circle--lg" style="margin-bottom: 2rem;">
+            <span class="material-symbols-outlined" style="font-size: 2.5rem;">psychology</span>
+          </div>
+          <h2 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 1.5rem;">Our Philosophy</h2>
+          <p class="philosophy-text">
+            We reject the "body shop" model. We partner with our clients, acting as an extension of their engineering team.
+            We prioritize long-term architectural health over short-term hacks.
+          </p>
+          <p class="philosophy-text">
+            We are deeply invested in the Kotlin Multiplatform ecosystem because we believe it represents the future of
+            mobile development: shared logic without compromising the native user experience.
+          </p>
+        </div>
+
+        <!-- Value Cards -->
+        <div class="values-col reveal--right">
+          {values.map((item) => (
+            <div class="card" style="padding: 2.5rem; display: flex; align-items: flex-start; gap: 1.5rem; border-radius: var(--radius-lg);">
+              <div class={`icon-circle icon-circle--${item.color}`}>
+                <span class="material-symbols-outlined" style="font-size: 1.5rem;">{item.icon}</span>
+              </div>
+              <div>
+                <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem;">{item.title}</h3>
+                <p style="color: var(--color-text-muted); line-height: 1.7;">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Team Section -->
+      <div class="team-section">
+        <div class="team-header reveal">
+          <h2 style="font-size: clamp(2.5rem, 5vw, 3rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1.5rem;">
+            Leadership
+          </h2>
+          <p style="font-size: 1.25rem; color: var(--color-text-muted);">
+            Founded by engineers who have built apps used by millions.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          {team.map((member, i) => (
+            <div class={`team-member reveal delay-${i + 1}`}>
+              <div class="team-avatar">
+                <img src={member.image} alt={member.name} referrerpolicy="no-referrer" loading="lazy" />
+              </div>
+              <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">{member.name}</h3>
+              <p class="team-role">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .about-page {
+    min-height: 100vh;
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+  }
+
+  .about-hero {
+    margin-bottom: 8rem;
+    max-width: 56rem;
+  }
+
+  .about-title {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    margin-bottom: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  /* Philosophy */
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    margin-bottom: 8rem;
+  }
+
+  @media (min-width: 769px) {
+    .philosophy-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .philosophy-main {
+    background: var(--color-bg-dark);
+    color: var(--color-text-light);
+    padding: 3rem;
+    border-radius: var(--radius-3xl);
+    box-shadow: var(--shadow-2xl);
+  }
+
+  .philosophy-text {
+    font-size: 1.25rem;
+    color: var(--color-white-80);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .philosophy-text:last-child {
+    margin-bottom: 0;
+  }
+
+  .values-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Team */
+  .team-section {
+    text-align: center;
+  }
+
+  .team-header {
+    margin-bottom: 5rem;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 769px) {
+    .team-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .team-member {
+    text-align: center;
+  }
+
+  .team-avatar {
+    position: relative;
+    width: 16rem;
+    height: 16rem;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .team-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+  }
+
+  .team-member:hover .team-avatar img {
+    filter: grayscale(0%);
+  }
+
+  .team-role {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.875rem;
+  }
+</style>

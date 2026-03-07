@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const services = [
+  {
+    title: 'Kotlin Multiplatform',
+    icon: 'devices',
+    description: 'Maximize code sharing across iOS and Android without sacrificing native performance or UI fidelity.',
+    features: ['Shared Business Logic', 'Native UI (Compose/SwiftUI)', 'Faster Time-to-Market', 'Reduced Maintenance'],
+  },
+  {
+    title: 'Native Android Development',
+    icon: 'android',
+    description: 'Deep expertise in the modern Android ecosystem with Kotlin, Jetpack Compose, and MVVM/MVI architectures.',
+    features: ['Jetpack Compose', 'Coroutines & Flow', 'Material Design 3', 'Performance Profiling'],
+  },
+  {
+    title: 'Native iOS Development',
+    icon: 'phone_iphone',
+    description: 'Crafting premium iOS experiences with Swift, SwiftUI, and Combine for fluid, responsive applications.',
+    features: ['Swift & SwiftUI', 'Combine Framework', 'CoreData & SwiftData', 'Human Interface Guidelines'],
+  },
+  {
+    title: 'Technical Debt Rescue',
+    icon: 'build',
+    description: 'We refactor complex codebases into modern, testable architectures without halting feature development.',
+    features: ['Architecture Audits', 'Incremental Refactoring', 'Test Coverage Improvement', 'CI/CD Optimization'],
+  },
+];
+---
+
+<BaseLayout title="Services - EODbytes" description="Kotlin Multiplatform, Android, iOS engineering and technical debt rescue.">
+  <Header />
+  <section class="services-page">
+    <div class="container">
+      <div class="services-header animate-fade-in-up">
+        <div class="badge">
+          <span class="material-symbols-outlined">construction</span>
+          What We Do
+        </div>
+        <h1 class="services-title">Engineering Services</h1>
+        <p class="services-subtitle">From greenfield projects to rescuing legacy codebases, we provide senior-level mobile engineering expertise.</p>
+      </div>
+      <div class="services-grid">
+        {services.map((service, i) => (
+          <div class={`service-card reveal delay-${(i % 2) + 1}`}>
+            <div class="svc-icon icon-circle icon-circle--primary icon-circle--lg">
+              <span class="material-symbols-outlined" style="font-size: 2.5rem;">{service.icon}</span>
+            </div>
+            <h2 class="service-title">{service.title}</h2>
+            <p class="service-desc">{service.description}</p>
+            <ul class="service-features">
+              {service.features.map((f) => (
+                <li class="service-feature">
+                  <span class="material-symbols-outlined" style="font-size: 0.875rem; color: var(--color-primary);">check_circle</span>
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <div class="services-cta reveal--scale">
+        <div class="services-cta-glow"></div>
+        <div class="services-cta-content">
+          <h2 class="cta-heading">Stop fighting your codebase.</h2>
+          <p class="cta-text">Technical debt is expensive. It slows down feature delivery, frustrates engineers, and degrades the user experience. Let us help you build a foundation for sustainable growth.</p>
+          <a href="/contact/" class="btn btn--primary btn--lg">Get an Architecture Audit <span class="material-symbols-outlined">arrow_forward</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .services-page { min-height: 100vh; padding-top: 8rem; padding-bottom: 5rem; }
+  .services-header { text-align: center; margin-bottom: 6rem; }
+  .services-title { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; letter-spacing: -0.04em; margin: 1.5rem 0 2rem; }
+  .services-subtitle { font-size: 1.5rem; color: var(--color-text-muted); line-height: 1.6; max-width: 48rem; margin: 0 auto; }
+  .services-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-bottom: 8rem; }
+  @media (min-width: 769px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  .service-card { background: white; padding: 2.5rem; border-radius: var(--radius-2xl); border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); transition: all 0.3s ease; }
+  .service-card:hover { box-shadow: var(--shadow-xl); }
+  .svc-icon { border-radius: var(--radius-xl); margin-bottom: 2rem; transition: transform 0.3s; }
+  .service-card:hover .svc-icon { transform: scale(1.1); }
+  .service-title { font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; transition: color 0.2s; }
+  .service-card:hover .service-title { color: var(--color-primary); }
+  .service-desc { color: var(--color-text-muted); line-height: 1.7; font-size: 1.1rem; margin-bottom: 2rem; }
+  .service-features { display: flex; flex-direction: column; gap: 0.75rem; }
+  .service-feature { display: flex; align-items: center; gap: 0.75rem; font-weight: 500; }
+  .services-cta { background: var(--color-bg-dark); color: var(--color-text-light); border-radius: var(--radius-3xl); padding: 3rem; text-align: center; box-shadow: var(--shadow-2xl); position: relative; overflow: hidden; }
+  @media (min-width: 769px) { .services-cta { padding: 5rem; } }
+  .services-cta-glow { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,79,15,0.2), transparent); opacity: 0.5; }
+  .services-cta-content { position: relative; z-index: 10; }
+  .cta-heading { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: -0.04em; margin-bottom: 2rem; }
+  .cta-text { font-size: 1.5rem; color: var(--color-white-80); max-width: 48rem; margin: 0 auto 3rem; line-height: 1.6; }
+</style>

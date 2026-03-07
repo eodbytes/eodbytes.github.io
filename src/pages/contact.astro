@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout title="Contact Us - EODbytes" description="Ready to elevate your mobile engineering? Tell us about your project.">
+  <Header />
+  <section class="contact-page">
+    <div class="container">
+      <div class="contact-header animate-fade-in-up">
+        <div class="badge"><span class="material-symbols-outlined">mail</span> Contact Us</div>
+        <h1 class="contact-title">Let's build together.</h1>
+        <p class="contact-subtitle">Ready to elevate your mobile engineering? Tell us about your project, and we'll schedule a discovery call with our senior engineers.</p>
+      </div>
+      <div class="contact-grid">
+        <!-- Form -->
+        <div class="contact-form-card animate-fade-in-left delay-2">
+          <form class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="Jane" />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Doe" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Work Email</label>
+              <input type="email" id="email" placeholder="jane@company.com" />
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" placeholder="Acme Corp" />
+            </div>
+            <div class="form-group">
+              <label for="project">Project Details</label>
+              <textarea id="project" rows="4" placeholder="Tell us about your goals, timeline, and current tech stack..."></textarea>
+            </div>
+            <button type="button" class="btn btn--primary" style="width: 100%; margin-top: 1rem;">
+              Send Message <span class="material-symbols-outlined">send</span>
+            </button>
+          </form>
+        </div>
+        <!-- Info -->
+        <div class="contact-info animate-fade-in-right delay-3">
+          <div class="contact-direct">
+            <h3 style="font-size: 1.75rem; font-weight: 900; margin-bottom: 1.5rem;">Direct Contact</h3>
+            <a href="mailto:hello@eodbytes.com" class="contact-link">
+              <div class="icon-circle icon-circle--primary icon-circle--sm"><span class="material-symbols-outlined">mail</span></div>
+              hello@eodbytes.com
+            </a>
+            <div class="contact-link">
+              <div class="icon-circle icon-circle--primary icon-circle--sm"><span class="material-symbols-outlined">location_on</span></div>
+              San Francisco, CA (Remote Worldwide)
+            </div>
+          </div>
+          <div class="next-steps">
+            <div class="next-steps-glow"></div>
+            <div class="next-steps-content">
+              <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">What happens next?</h3>
+              <ol class="steps-list">
+                <li><span class="step-num">1.</span> We review your project details within 24 hours.</li>
+                <li><span class="step-num">2.</span> We schedule a 30-minute discovery call with a senior engineer (no salespeople).</li>
+                <li><span class="step-num">3.</span> We provide a high-level technical assessment and proposal.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .contact-page { min-height: 100vh; padding-top: 8rem; padding-bottom: 5rem; }
+  .contact-header { text-align: center; margin-bottom: 6rem; }
+  .contact-title { font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; letter-spacing: -0.04em; margin: 1.5rem 0 2rem; }
+  .contact-subtitle { font-size: 1.5rem; color: var(--color-text-muted); line-height: 1.6; max-width: 48rem; margin: 0 auto; }
+  .contact-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; }
+  @media (min-width: 1024px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+  .contact-form-card { background: white; padding: 2.5rem; border-radius: var(--radius-3xl); box-shadow: var(--shadow-lg); border: 1px solid var(--color-border); }
+  @media (min-width: 769px) { .contact-form-card { padding: 4rem; } }
+  .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
+  .form-row { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  @media (min-width: 769px) { .form-row { grid-template-columns: 1fr 1fr; } }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-group label { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); }
+  .form-group input, .form-group textarea { background: var(--color-bg-light); border: 1px solid var(--color-border-light); border-radius: var(--radius-sm); padding: 0.75rem 1rem; font-size: 1rem; transition: all 0.2s; resize: none; }
+  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(255, 79, 15, 0.15); }
+  .contact-info { display: flex; flex-direction: column; gap: 3rem; justify-content: center; }
+  .contact-direct { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link { display: flex; align-items: center; gap: 1rem; font-size: 1.25rem; color: var(--color-text-muted); transition: color 0.2s; }
+  .contact-link:hover { color: var(--color-primary); }
+  .next-steps { background: var(--color-bg-dark); color: var(--color-text-light); padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-2xl); position: relative; overflow: hidden; }
+  .next-steps-glow { position: absolute; right: -2.5rem; top: -2.5rem; width: 10rem; height: 10rem; background: rgba(255, 79, 15, 0.2); border-radius: 50%; filter: blur(40px); }
+  .next-steps-content { position: relative; z-index: 10; }
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; color: var(--color-white-80); }
+  .steps-list li { display: flex; align-items: flex-start; gap: 0.75rem; }
+  .step-num { color: var(--color-primary); font-weight: 900; }
+</style>
