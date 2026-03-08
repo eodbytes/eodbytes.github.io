@@ -151,6 +151,111 @@ const services = [
     </div>
   </section>
 
+  <!-- Cost Comparison Section -->
+  <section class="comparison section">
+    <div class="container">
+      <div class="comparison-header">
+        <h2 class="section-title reveal">The Real Cost of an MVP</h2>
+        <p class="section-subtitle reveal delay-1">
+          The MVP-then-rewrite path costs nearly double over 18 months. Our libraries-first approach eliminates the rewrite entirely.
+        </p>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- MVP Path -->
+        <div class="comparison-card comparison-card--faded reveal--left">
+          <div class="comparison-label">Traditional MVP Path</div>
+          <div class="comparison-total">~$120K</div>
+          <p class="comparison-period">over 18 months</p>
+          <ul class="comparison-list">
+            <li>
+              <span class="comparison-item-label">Launch (0–4 mo)</span>
+              <span class="comparison-item-value">$45,000</span>
+            </li>
+            <li>
+              <span class="comparison-item-label">Scale & Rewrite (6–12 mo)</span>
+              <span class="comparison-item-value">$60,000</span>
+            </li>
+            <li>
+              <span class="comparison-item-label">Maintenance (Year 1)</span>
+              <span class="comparison-item-value">$15,000</span>
+            </li>
+          </ul>
+          <div class="comparison-verdict comparison-verdict--negative">
+            <span class="material-symbols-outlined" style="font-size: 1.25rem;">warning</span>
+            Rewrite required to scale
+          </div>
+        </div>
+
+        <!-- EODbytes Path -->
+        <div class="comparison-card comparison-card--highlighted reveal--right">
+          <div class="comparison-badge">Recommended</div>
+          <div class="comparison-label">Libraries-First Path</div>
+          <div class="comparison-total comparison-total--accent">~$65K</div>
+          <p class="comparison-period">over 18 months</p>
+          <ul class="comparison-list">
+            <li>
+              <span class="comparison-item-label">Launch (0–4 mo)</span>
+              <span class="comparison-item-value">$55,000</span>
+            </li>
+            <li>
+              <span class="comparison-item-label">Scale (6–12 mo)</span>
+              <span class="comparison-item-value">$10,000</span>
+            </li>
+            <li>
+              <span class="comparison-item-label">Maintenance (Year 1)</span>
+              <span class="comparison-item-value">Included</span>
+            </li>
+          </ul>
+          <div class="comparison-verdict comparison-verdict--positive">
+            <span class="material-symbols-outlined" style="font-size: 1.25rem;">check_circle</span>
+            Production-ready from day one
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap Section -->
+  <section class="roadmap section--compact">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <div class="badge reveal" style="margin-bottom: 1.5rem;">
+          <span class="material-symbols-outlined">timeline</span>
+          Coming Soon
+        </div>
+        <h2 class="section-title reveal delay-1">The Roadmap</h2>
+        <p class="section-subtitle reveal delay-2" style="margin: 0 auto;">
+          We're building toward a complete Product OS — so you have everything you need from build to growth, in one place.
+        </p>
+      </div>
+
+      <div class="roadmap-grid">
+        <div class="card card--rounded reveal delay-1" style="padding: 2.5rem; text-align: center;">
+          <div class="icon-circle icon-circle--primary" style="border-radius: var(--radius-xl); margin: 0 auto 1.5rem;">
+            <span class="material-symbols-outlined" style="font-size: 1.75rem;">dns</span>
+          </div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Custom Backend</h3>
+          <p style="color: var(--color-text-muted); line-height: 1.7;">Full-stack Kotlin consistency. Share data models and business logic between your mobile apps and backend — eliminating API mismatches.</p>
+        </div>
+        <div class="card card--rounded reveal delay-2" style="padding: 2.5rem; text-align: center;">
+          <div class="icon-circle icon-circle--green" style="border-radius: var(--radius-xl); margin: 0 auto 1.5rem;">
+            <span class="material-symbols-outlined" style="font-size: 1.75rem;">storefront</span>
+          </div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Store Automation</h3>
+          <p style="color: var(--color-text-muted); line-height: 1.7;">Automated App Store Optimization analytics with real-time download data. Test the virality of an idea before committing resources.</p>
+        </div>
+        <div class="card card--rounded reveal delay-3" style="padding: 2.5rem; text-align: center;">
+          <div class="icon-circle icon-circle--purple" style="border-radius: var(--radius-xl); margin: 0 auto 1.5rem;">
+            <span class="material-symbols-outlined" style="font-size: 1.75rem;">monitoring</span>
+          </div>
+          <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Social Tracking</h3>
+          <p style="color: var(--color-text-muted); line-height: 1.7;">Unified marketing ROI across all social platforms. One dashboard to track user acquisition, engagement, and conversion from every channel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="cta">
     <div class="cta-inner reveal--scale">
@@ -489,5 +594,142 @@ const services = [
     max-width: 40rem;
     margin: 0 auto 3rem;
     font-weight: 500;
+  }
+
+  /* --- Comparison --- */
+  .comparison-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 769px) {
+    .comparison-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .comparison-card {
+    background: white;
+    border-radius: var(--radius-2xl);
+    padding: 2.5rem;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+  }
+
+  .comparison-card--faded {
+    opacity: 0.85;
+  }
+
+  .comparison-card--highlighted {
+    border: 2px solid var(--color-primary);
+    box-shadow: var(--shadow-lg), 0 0 0 4px rgba(255, 79, 15, 0.08);
+  }
+
+  .comparison-badge {
+    position: absolute;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.35rem 1.25rem;
+    border-radius: var(--radius-full);
+  }
+
+  .comparison-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .comparison-total {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.25rem;
+  }
+
+  .comparison-total--accent {
+    color: var(--color-primary);
+  }
+
+  .comparison-period {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .comparison-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border-light);
+  }
+
+  .comparison-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .comparison-item-label {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .comparison-item-value {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .comparison-verdict {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .comparison-verdict--negative {
+    background: #fef2f2;
+    color: #dc2626;
+  }
+
+  .comparison-verdict--positive {
+    background: #f0fdf4;
+    color: #16a34a;
+  }
+
+  /* --- Roadmap --- */
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 769px) {
+    .roadmap-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 </style>
