@@ -6,33 +6,33 @@ import '../styles/global.css';
 
 const services = [
   {
-    title: 'Kotlin Multiplatform',
-    icon: 'devices',
-    description: 'Maximize code sharing across iOS and Android without sacrificing native performance or UI fidelity.',
-    features: ['Shared Business Logic', 'Native UI (Compose/SwiftUI)', 'Faster Time-to-Market', 'Reduced Maintenance'],
+    title: 'Production App Build',
+    icon: 'rocket_launch',
+    description: 'Start with production-grade architecture, not a throwaway MVP. Our library ecosystem means 70–80% of functionality — auth, networking, persistence, state management — is already tested and compliant. You launch a real product, not a prototype.',
+    features: ['Libraries-First Architecture', 'Kotlin Multiplatform + Compose', 'Prod-Level from Sprint 1', 'Store-Compliant from Day 1'],
   },
   {
-    title: 'Native Android Development',
-    icon: 'android',
-    description: 'Deep expertise in the modern Android ecosystem with Kotlin, Jetpack Compose, and MVVM/MVI architectures.',
-    features: ['Jetpack Compose', 'Coroutines & Flow', 'Material Design 3', 'Performance Profiling'],
-  },
-  {
-    title: 'Native iOS Development',
-    icon: 'phone_iphone',
-    description: 'Crafting premium iOS experiences with Swift, SwiftUI, and Combine for fluid, responsive applications.',
-    features: ['Swift & SwiftUI', 'Combine Framework', 'CoreData & SwiftData', 'Human Interface Guidelines'],
-  },
-  {
-    title: 'Technical Debt Rescue',
+    title: 'App 2.0 — The Reshape',
     icon: 'build',
-    description: 'We refactor complex codebases into modern, testable architectures without halting feature development.',
-    features: ['Architecture Audits', 'Incremental Refactoring', 'Test Coverage Improvement', 'CI/CD Optimization'],
+    description: 'Your app has market validation but the code can\'t scale. Constant crashes, slow feature delivery, dependency nightmares. We reshape your existing product using our hardened library framework — preserving what works while replacing what doesn\'t.',
+    features: ['Codebase Architecture Audit', 'Systematic Library Transplant', 'Zero Downtime Transition', 'Performance & Security Uplift'],
+  },
+  {
+    title: 'Managed Maintenance & Compliance',
+    icon: 'verified_user',
+    description: 'Making an app is not the difficult part — staying compliant and keeping libraries updated is. We handle all five types of maintenance as a core service, so your app never gets rejected, breached, or left behind.',
+    features: ['Corrective (Bug Fixes & Crashes)', 'Adaptive (OS & Device Updates)', 'Preventative (Library Updates)', 'Emergency (Critical Patches)'],
+  },
+  {
+    title: 'Embedded Engineering Team',
+    icon: 'groups',
+    description: 'Don\'t hire a full engineering team from scratch. We embed 1–2 senior engineers directly into your organization — with full access to our library ecosystem, architectural standards, and compliance infrastructure.',
+    features: ['Dedicated Senior Engineers', 'Full Library Ecosystem Access', 'Compliance & Dependency Mgmt', 'Scales with Your Business'],
   },
 ];
 ---
 
-<BaseLayout title="Services - EODbytes" description="Kotlin Multiplatform, Android, iOS engineering and technical debt rescue.">
+<BaseLayout title="Services — Production Builds, App 2.0 Reshapes & Managed Maintenance | EODbytes" description="From greenfield production builds to rescuing messy codebases. KMP development, App 2.0 reshapes, managed maintenance, and embedded engineering teams.">
   <Header />
   <section class="services-page">
     <div class="container">
@@ -41,8 +41,8 @@ const services = [
           <span class="material-symbols-outlined">construction</span>
           What We Do
         </div>
-        <h1 class="services-title">Engineering Services</h1>
-        <p class="services-subtitle">From greenfield projects to rescuing legacy codebases, we provide senior-level mobile engineering expertise.</p>
+        <h1 class="services-title">Production-Ready Engineering</h1>
+        <p class="services-subtitle">From greenfield builds to rescuing messy codebases, we use our libraries-first methodology to deliver apps that are deployment-ready from the start — no MVP phase, no rewrite required.</p>
       </div>
       <div class="services-grid">
         {services.map((service, i) => (
@@ -66,9 +66,9 @@ const services = [
       <div class="services-cta reveal--scale">
         <div class="services-cta-glow"></div>
         <div class="services-cta-content">
-          <h2 class="cta-heading">Stop fighting your codebase.</h2>
-          <p class="cta-text">Technical debt is expensive. It slows down feature delivery, frustrates engineers, and degrades the user experience. Let us help you build a foundation for sustainable growth.</p>
-          <a href="/contact/" class="btn btn--primary btn--lg">Get an Architecture Audit <span class="material-symbols-outlined">arrow_forward</span></a>
+          <h2 class="cta-heading">The MVP rewrite is the most expensive mistake in mobile.</h2>
+          <p class="cta-text">The average startup spends $120K over 18 months on the MVP-then-rewrite path. Our libraries-first approach delivers the same outcome for $65K — and your Year 1 maintenance is included.</p>
+          <a href="/contact/" class="btn btn--primary btn--lg">Get a Free Readiness Assessment <span class="material-symbols-outlined">arrow_forward</span></a>
         </div>
       </div>
     </div>

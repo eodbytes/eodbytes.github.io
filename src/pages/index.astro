@@ -6,24 +6,24 @@ import '../styles/global.css';
 
 const services = [
   {
+    icon: 'construction',
+    title: 'Build from Tested Libraries',
+    desc: '70–80% of app functionality is standardized in our pre-validated library ecosystem — auth, networking, persistence, state management — all architecturally correct from day one.',
+  },
+  {
     icon: 'devices',
-    title: 'Kotlin Multiplatform',
-    desc: 'Share business logic across iOS and Android while maintaining 100% native UI performance and feel.',
+    title: 'Ship to Both Platforms',
+    desc: 'Kotlin Multiplatform shares business logic natively across iOS and Android. No cross-platform compromises — 100% native performance with the Compose + SwiftUI rendering pipeline.',
   },
   {
-    icon: 'android',
-    title: 'Native Android',
-    desc: 'Deep expertise in Kotlin, Jetpack Compose, Coroutines, and modern Android architecture.',
-  },
-  {
-    icon: 'phone_iphone',
-    title: 'Native iOS',
-    desc: 'Swift, SwiftUI, and Combine. We build fluid, Apple-standard experiences that users love.',
+    icon: 'verified_user',
+    title: 'Stay Compliant, Always',
+    desc: 'App Store and Play Store policies change constantly. Our managed maintenance handles adaptive updates, security patches, and dependency upgrades — so your app never falls behind.',
   },
 ];
 ---
 
-<BaseLayout title="EODbytes - Mobile Engineering Studio">
+<BaseLayout title="EODbytes — Production-Ready Mobile Apps | Kotlin Multiplatform Studio">
   <Header />
 
   <!-- Hero Section -->
@@ -31,19 +31,18 @@ const services = [
     <div class="hero-inner">
       <div class="hero-content animate-fade-in-up">
         <div class="badge">
-          <span class="material-symbols-outlined">rocket_launch</span>
-          Mobile Engineering Studio
+          <span class="material-symbols-outlined">library_books</span>
+          Libraries-First Engineering
         </div>
         <h1 class="hero-title">
-          We build <span class="accent">premium</span> mobile experiences.
+          We don't build MVPs. We build <span class="accent">production-ready</span> apps.
         </h1>
         <p class="hero-subtitle">
-          Specializing in Kotlin Multiplatform, native Android, and iOS. We transform complex technical challenges into
-          elegant, high-performance applications.
+          Skip the throwaway prototype. Our pre-tested library ecosystem delivers deployment-ready mobile apps on Kotlin Multiplatform — no rewrite cycle, no technical debt, no compliance headaches.
         </p>
         <div class="hero-actions">
-          <a href="/work/" class="btn btn--primary">
-            View Our Work
+          <a href="/process/" class="btn btn--primary">
+            See How We Build
             <span class="material-symbols-outlined">arrow_forward</span>
           </a>
           <a href="/contact/" class="btn btn--outline"> Start a Project </a>
@@ -73,8 +72,8 @@ const services = [
             <span class="material-symbols-outlined">code</span>
           </div>
           <div>
-            <p class="floating-label">Tech Stack</p>
-            <p class="floating-value">Kotlin Multiplatform</p>
+            <p class="floating-label">Architecture</p>
+            <p class="floating-value">Libraries-First</p>
           </div>
         </div>
 
@@ -83,8 +82,8 @@ const services = [
             <span class="material-symbols-outlined">speed</span>
           </div>
           <div>
-            <p class="floating-label">Performance</p>
-            <p class="floating-value">60fps Native</p>
+            <p class="floating-label">Time-to-Market</p>
+            <p class="floating-value">40% Faster</p>
           </div>
         </div>
       </div>
@@ -95,20 +94,20 @@ const services = [
   <section class="stats">
     <div class="stats-inner">
       <div class="stat">
-        <h3 class="stat-number">50+</h3>
-        <p class="stat-label">Apps Shipped</p>
+        <h3 class="stat-number">80%+</h3>
+        <p class="stat-label">Code Shared</p>
       </div>
       <div class="stat">
-        <h3 class="stat-number">4.9</h3>
-        <p class="stat-label">App Store Avg</p>
+        <h3 class="stat-number">Day 1</h3>
+        <p class="stat-label">Prod-Ready</p>
       </div>
       <div class="stat">
-        <h3 class="stat-number">10M+</h3>
-        <p class="stat-label">Active Users</p>
+        <h3 class="stat-number">100%</h3>
+        <p class="stat-label">Store-Compliant</p>
       </div>
       <div class="stat">
-        <h3 class="stat-number">0</h3>
-        <p class="stat-label">Technical Debt</p>
+        <h3 class="stat-number">45%</h3>
+        <p class="stat-label">Lower TCO</p>
       </div>
     </div>
   </section>
@@ -118,9 +117,9 @@ const services = [
     <div class="container">
       <div class="services-header">
         <div>
-          <h2 class="section-title reveal">Engineering Excellence</h2>
+          <h2 class="section-title reveal">The Libraries-First Advantage</h2>
           <p class="section-subtitle reveal delay-1">
-            We don't just write code; we architect scalable, maintainable mobile solutions that drive business growth.
+            While others hack together MVPs, we assemble production apps from our ecosystem of battle-tested libraries. Faster delivery. Zero architectural debt.
           </p>
         </div>
         <a href="/services/" class="services-link hide-mobile reveal">
@@ -155,13 +154,13 @@ const services = [
   <!-- CTA Section -->
   <section class="cta">
     <div class="cta-inner reveal--scale">
-      <h2 class="cta-title">Ready to build something extraordinary?</h2>
+      <h2 class="cta-title">Is your app built on vibe code?</h2>
       <p class="cta-subtitle">
-        Let's discuss your mobile strategy and how our engineering team can accelerate your roadmap.
+        Whether you're starting fresh or rescuing a messy codebase, our libraries-first approach gets you to production faster — and keeps you there.
       </p>
       <a href="/contact/" class="btn btn--dark btn--lg">
-        Schedule a Discovery Call
-        <span class="material-symbols-outlined">calendar_month</span>
+        Get a Free Architecture Assessment
+        <span class="material-symbols-outlined">arrow_forward</span>
       </a>
     </div>
   </section>
